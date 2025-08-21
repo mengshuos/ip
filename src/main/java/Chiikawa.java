@@ -61,11 +61,15 @@ public class Chiikawa {
             } else if (Objects.equals(action[0], "mark")) {
                 int index = Integer.parseInt(action[1]);
                 System.out.println(index);
-                taskList[index].markTask();
+                taskList[index - 1].markTask();
+                System.out.println("okee! you finis~~");
+                System.out.println("__________________________________________________________________");
 
             } else if (Objects.equals(action[0], "unmark")) {
                 int index = Integer.parseInt(action[1]);
-                taskList[index].unmarkTask();
+                taskList[index - 1].unmarkTask();
+                System.out.println("ohh.... slowpoke!!");
+                System.out.println("__________________________________________________________________");
 
             } else {
                 taskList[taskListItemCount] = new Task(nextLine);
