@@ -41,10 +41,15 @@ public class Chiikawa {
         while (!Objects.equals(nextLine, "bye")) {
             nextLine = scanner.nextLine();
 
-            list[listItemCount] = nextLine;
-            listItemCount++;
-            System.out.println("added!!: " + nextLine);
-            System.out.println("__________________________________________________________________");
+            if (Objects.equals(nextLine, "bye")) {
+                System.out.println("bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎");
+                System.out.println("__________________________________________________________________");
+            } else {
+                list[listItemCount] = nextLine;
+                listItemCount++;
+                System.out.println("added!!: " + nextLine);
+                System.out.println("__________________________________________________________________");
+            }
 
 //            if (Objects.equals(nextLine, "list")) {
 //                System.out.println("l...li...list");
