@@ -4,6 +4,9 @@ import java.util.Scanner;
 public class Chiikawa {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String[] list = new String[100];
+        int listItemCount = 0;
+
         String nextLine = "";
         String chiikawaArt = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⠿⣶⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠟⠿⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠁⠀⠀⣿⣇⣠⣤⣴⣶⣶⣶⣶⡶⢶⣶⣶⣶⣤⣼⣿⠀⠀⠀⣸⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
@@ -38,19 +41,24 @@ public class Chiikawa {
         while (!Objects.equals(nextLine, "bye")) {
             nextLine = scanner.nextLine();
 
-            if (Objects.equals(nextLine, "list")) {
-                System.out.println("l...li...list");
-                System.out.println("__________________________________________________________________");
-            } else if (Objects.equals(nextLine, "blah")) {
-                System.out.println("bah");
-                System.out.println("__________________________________________________________________");
-            } else if (Objects.equals(nextLine, "bye")) {
-                System.out.println("bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎");
-                System.out.println("__________________________________________________________________");
-            } else {
-                System.out.println("wwha? dun geddit...");
-                System.out.println("__________________________________________________________________");
-            }
+            list[listItemCount] = nextLine;
+            listItemCount++;
+            System.out.println("added!!: " + nextLine);
+            System.out.println("__________________________________________________________________");
+
+//            if (Objects.equals(nextLine, "list")) {
+//                System.out.println("l...li...list");
+//                System.out.println("__________________________________________________________________");
+//            } else if (Objects.equals(nextLine, "blah")) {
+//                System.out.println("bah");
+//                System.out.println("__________________________________________________________________");
+//            } else if (Objects.equals(nextLine, "bye")) {
+//                System.out.println("bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎");
+//                System.out.println("__________________________________________________________________");
+//            } else {
+//                System.out.println("wwha? dun geddit...");
+//                System.out.println("__________________________________________________________________");
+//            }
         }
         scanner.close();
     }
