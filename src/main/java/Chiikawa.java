@@ -53,22 +53,22 @@ public class Chiikawa {
                 System.out.println("i- i twhink these you tasks...?");
                 for (int index = 0; index < taskListItemCount; index++) {
                     Task currTask = taskList[index];
-                    System.out.println((index + 1) + ".[" + currTask.getStatusIcon() + "] " + currTask.name);
+                    System.out.println((index + 1) + "." + currTask.toString());
                 }
                 System.out.println("__________________________________________________________________");
 
-
             } else if (Objects.equals(action[0], "mark")) {
                 int index = Integer.parseInt(action[1]);
-                System.out.println(index);
                 taskList[index - 1].markTask();
                 System.out.println("okee! you finis~~");
+                System.out.println(taskList[index - 1].toString());
                 System.out.println("__________________________________________________________________");
 
             } else if (Objects.equals(action[0], "unmark")) {
                 int index = Integer.parseInt(action[1]);
                 taskList[index - 1].unmarkTask();
                 System.out.println("ohh.... slowpoke!!");
+                System.out.println(taskList[index - 1].toString());
                 System.out.println("__________________________________________________________________");
 
             } else {
@@ -76,6 +76,7 @@ public class Chiikawa {
                 taskListItemCount++;
                 System.out.println("added!!: " + nextLine);
                 System.out.println("__________________________________________________________________");
+
             }
         }
 
