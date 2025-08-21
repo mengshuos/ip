@@ -7,7 +7,14 @@ public class Task {
     }
 
     public String getStatusIcon() {
-        return (isCompleted ? "X" : " ");
+        return (this.isCompleted ? "X" : " ");
     }
 
+    public void markTask() {
+        this.isCompleted = true;
+    }
+
+    public void unmarkTask() {
+        this.isCompleted = false;
+    }
 }
