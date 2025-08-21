@@ -27,7 +27,7 @@ public class Chiikawa {
         System.out.println("hewwo~!");
         System.out.println(chiikawa_art);
         System.out.println("me chiikawa!!");
-        System.out.println("you do somethin'?");
+        System.out.println("you... do somethin'?");
         System.out.println("__________________________________________________________________");
         System.out.println("bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎");
         System.out.println("__________________________________________________________________");
