@@ -37,10 +37,21 @@ public class Chiikawa {
 
         while (!Objects.equals(nextLine, "bye")) {
             nextLine = scanner.nextLine();
+
+            if (Objects.equals(nextLine, "list")) {
+                System.out.println("l...li...list");
+                System.out.println("__________________________________________________________________");
+            } else if (Objects.equals(nextLine, "blah")) {
+                System.out.println("bah");
+                System.out.println("__________________________________________________________________");
+            } else if (Objects.equals(nextLine, "bye")) {
+                System.out.println("bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎");
+                System.out.println("__________________________________________________________________");
+            } else {
+                System.out.println("wwha? dun geddit...");
+                System.out.println("__________________________________________________________________");
+            }
         }
         scanner.close();
-
-        System.out.println("bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎");
-        System.out.println("__________________________________________________________________");
     }
 }
