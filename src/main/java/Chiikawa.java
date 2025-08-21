@@ -49,8 +49,18 @@ public class Chiikawa {
                 scanner.close();
                 return;
 
+            } else if (Objects.equals(nextLine, "list")) {
+                System.out.println("i- i twhink these you tasks...?");
+                for (int index = 0; index < taskListItemCount; index++) {
+                    Task currTask = taskList[index];
+                    System.out.println((index + 1) + ".[" + currTask.getStatusIcon() + "] " + currTask.name);
+                }
+                System.out.println("__________________________________________________________________");
+
+
             } else if (Objects.equals(action[0], "mark")) {
                 int index = Integer.parseInt(action[1]);
+                System.out.println(index);
                 taskList[index].markTask();
 
             } else if (Objects.equals(action[0], "unmark")) {
