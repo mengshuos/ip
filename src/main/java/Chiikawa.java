@@ -70,6 +70,15 @@ public class Chiikawa {
                     System.out.println("ohh.... slowpoke!!");
                     System.out.println(taskList.get(index - 1).toString());
 
+                } else if (Objects.equals(action[0], "delete")) {
+                    int index = Integer.parseInt(action[1]);
+                    System.out.println("oke... i kill!! say bai bai to:");
+                    System.out.println(taskList.get(index - 1).toString());
+                    taskList.get(index - 1).deleteTask();
+                    taskList.remove(index - 1);
+                    System.out.println("now only have " + Task.getTaskCount() + " tasks...");
+
+
                 } else if (Objects.equals(action[0], "todo")) {
                     if (action.length != 2) {
                         throw new ChiikawaException("no name!! u giv no name!!");
