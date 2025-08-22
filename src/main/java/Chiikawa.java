@@ -73,18 +73,30 @@ public class Chiikawa {
                 System.out.println("__________________________________________________________________");
 
             } else if (Objects.equals(action[0], "todo")) {
+                System.out.println("wahhh! oke, me add add:");
                 taskList[taskListItemCount] = new ToDoTask(action[1]);
+                System.out.println("  " + taskList[taskListItemCount].toString());
                 taskListItemCount++;
+                System.out.println("wuuu! " + taskListItemCount + " tasks in list now!");
+                System.out.println("__________________________________________________________________");
 
             } else if (Objects.equals(action[0], "deadline")) {
                 specifiedTime = action[1].split("/");
+                System.out.println("ohh! de..deadline?! uuuhh, me add me add:");
                 taskList[taskListItemCount] = new DeadlineTask(specifiedTime[0], specifiedTime[1]);
+                System.out.println("  " + taskList[taskListItemCount].toString());
                 taskListItemCount++;
+                System.out.println("wuuu! " + taskListItemCount + " tasks in list now!");
+                System.out.println("__________________________________________________________________");
 
             } else if (Objects.equals(action[0], "event")) {
                 specifiedTime = action[1].split("/");
+                System.out.println("wowzies! yayy! can me go? me add me add:");
                 taskList[taskListItemCount] = new EventTask(specifiedTime[0], specifiedTime[1], specifiedTime[2]);
+                System.out.println("  " + taskList[taskListItemCount].toString());
                 taskListItemCount++;
+                System.out.println("wuuu! " + taskListItemCount + " tasks in list now!");
+                System.out.println("__________________________________________________________________");
 
             } else {
                 taskList[taskListItemCount] = new Task(nextLine);
