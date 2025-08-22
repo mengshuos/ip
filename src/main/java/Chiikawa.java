@@ -8,6 +8,7 @@ public class Chiikawa {
         int taskListItemCount = 0;
         String nextLine = "";
         String[] action;
+        String[] specifiedTime;
 
         String chiikawaArt = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⠿⣶⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠟⠿⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠁⠀⠀⣿⣇⣠⣤⣴⣶⣶⣶⣶⡶⢶⣶⣶⣶⣤⣼⣿⠀⠀⠀⣸⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
@@ -70,6 +71,20 @@ public class Chiikawa {
                 System.out.println("ohh.... slowpoke!!");
                 System.out.println(taskList[index - 1].toString());
                 System.out.println("__________________________________________________________________");
+
+            } else if (Objects.equals(action[0], "todo")) {
+                taskList[taskListItemCount] = new ToDoTask(action[1]);
+                taskListItemCount++;
+
+            } else if (Objects.equals(action[0], "deadline")) {
+                specifiedTime = action[1].split("/");
+                taskList[taskListItemCount] = new DeadlineTask(specifiedTime[0], specifiedTime[1]);
+                taskListItemCount++;
+
+            } else if (Objects.equals(action[0], "event")) {
+                specifiedTime = action[1].split("/");
+                taskList[taskListItemCount] = new EventTask(specifiedTime[0], specifiedTime[1], specifiedTime[2]);
+                taskListItemCount++;
 
             } else {
                 taskList[taskListItemCount] = new Task(nextLine);
