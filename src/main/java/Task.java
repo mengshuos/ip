@@ -24,6 +24,10 @@ public class Task {
         return TASK_COUNT;
     }
 
+    public void deleteTask() {
+        TASK_COUNT--;
+    }
+
     @Override
     public String toString() {
         return "[" + this.getStatusIcon() + "] " + this.name;
