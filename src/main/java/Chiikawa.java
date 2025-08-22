@@ -63,7 +63,6 @@ public class Chiikawa {
                 switch(currAction) {
                     case BYE:
                         System.out.println("bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎");
-                        System.out.println("__________________________________________________________________");
                         scanner.close();
                         return;
                     case LIST:
@@ -107,7 +106,7 @@ public class Chiikawa {
                     case DEADLINE:
                         specifiedTime = action[1].split("/");
 
-                        if (specifiedTime.length != 3) {
+                        if (specifiedTime.length != 2) {
                             throw new ChiikawaException("wher...where is time!!! giv me gud deadline!!!");
                         }
 
