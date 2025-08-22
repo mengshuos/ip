@@ -77,7 +77,7 @@ public class Chiikawa {
                 taskList[taskListItemCount] = new ToDoTask(action[1]);
                 System.out.println("  " + taskList[taskListItemCount].toString());
                 taskListItemCount++;
-                System.out.println("wuuu! " + taskListItemCount + " tasks in list now!");
+                System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
                 System.out.println("__________________________________________________________________");
 
             } else if (Objects.equals(action[0], "deadline")) {
@@ -86,7 +86,7 @@ public class Chiikawa {
                 taskList[taskListItemCount] = new DeadlineTask(specifiedTime[0], specifiedTime[1]);
                 System.out.println("  " + taskList[taskListItemCount].toString());
                 taskListItemCount++;
-                System.out.println("wuuu! " + taskListItemCount + " tasks in list now!");
+                System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
                 System.out.println("__________________________________________________________________");
 
             } else if (Objects.equals(action[0], "event")) {
@@ -95,7 +95,7 @@ public class Chiikawa {
                 taskList[taskListItemCount] = new EventTask(specifiedTime[0], specifiedTime[1], specifiedTime[2]);
                 System.out.println("  " + taskList[taskListItemCount].toString());
                 taskListItemCount++;
-                System.out.println("wuuu! " + taskListItemCount + " tasks in list now!");
+                System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
                 System.out.println("__________________________________________________________________");
 
             } else {
