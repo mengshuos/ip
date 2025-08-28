@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class FileManagement {
-    File f;
-    Scanner s;
-    FileWriter fw;
+    private File f;
+    private Scanner s;
+    private FileWriter fw;
 
     public FileManagement(String filePath) {
         this.f = new File(filePath);
