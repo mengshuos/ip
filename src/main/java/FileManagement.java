@@ -7,22 +7,36 @@ import java.util.Scanner;
 
 public class FileManagement {
     private String filePath;
+    private File f;
 
-    public FileManagement(String filePath) {
+    public FileManagement(String filePath, String dirPath) {
         this.filePath = filePath;
-    }
-
-    public ArrayList<Task> loadFile() {
-        File f = new File(this.filePath);
-        Scanner s = null;
-        ArrayList<Task> taskList = new ArrayList<>();
+        f = new File(filePath);
+        File dir = new File(dirPath);
 
         try {
+            if (!dir.exists()) {
+                System.out.println("diwectory nawt faound!!");
+                System.out.println("i make, no worry");
+                dir.mkdirs();
+            }
+
             if (!f.exists()) {
                 System.out.println("file nawt faound!!");
                 System.out.println("i make, no worry");
                 f.createNewFile();
             }
+
+        } catch (IOException e) {
+            System.out.println("something wrong!!");
+        }
+    }
+
+    public ArrayList<Task> loadFile() {
+        Scanner s = null;
+        ArrayList<Task> taskList = new ArrayList<>();
+
+        try {
             s = new Scanner(f);
         } catch (IOException e) {
             System.out.println("something wrong!!");
