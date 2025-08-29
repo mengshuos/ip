@@ -8,6 +8,12 @@ public class Task {
         TASK_COUNT++;
     }
 
+    public Task(String name, boolean isCompleted) {
+        this.name = name;
+        this.isCompleted = isCompleted;
+        TASK_COUNT++;
+    }
+
     public String getStatusIcon() {
         return (this.isCompleted ? "1" : "0");
     }
@@ -30,6 +36,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "| " + this.getStatusIcon() + "| " + this.name;
+        return "| " + this.getStatusIcon() + " | " + this.name;
     }
 }
