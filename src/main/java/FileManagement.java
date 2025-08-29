@@ -66,7 +66,7 @@ public class FileManagement {
             FileWriter fw = new FileWriter(this.filePath, false);
             for (int i = 0; i < taskList.size(); i++) {
                 Task currTask = taskList.get(i);
-                fw.append(currTask.toString());
+                fw.append(currTask.toString() + "\n");
             }
             fw.close();
 
