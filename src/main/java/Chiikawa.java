@@ -9,12 +9,14 @@ public class Chiikawa {
         String nextLine = "";
         String[] action;
         String[] specifiedTime;
+        FileManagement listFile = new FileManagement("../../../data/list.txt");
 
         enum Actions {
             TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE
         }
 
-        String chiikawaArt = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⠿⣶⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠟⠿⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+        String chiikawaArt =
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⠿⣶⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠟⠿⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠁⠀⠀⣿⣇⣠⣤⣴⣶⣶⣶⣶⡶⢶⣶⣶⣶⣤⣼⣿⠀⠀⠀⣸⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣧⠀⠀⠀⠛⠛⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠀⠀⢸⣟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⣼⡄⠀⠀⠀⠀⠀⠀⢀⣴⣾⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠿⣶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
@@ -65,6 +67,7 @@ public class Chiikawa {
                         System.out.println("bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎");
                         scanner.close();
                         return;
+
                     case LIST:
                         System.out.println("i- i twhink these you tasks...?");
                         for (int i = 0; i < taskList.size(); i++) {
@@ -72,18 +75,21 @@ public class Chiikawa {
                             System.out.println((i + 1) + "." + currTask.toString());
                         }
                         break;
+
                     case MARK:
                         index = Integer.parseInt(action[1]);
                         taskList.get(index - 1).markTask();
                         System.out.println("okee! you finis~~");
                         System.out.println(taskList.get(index - 1).toString());
                         break;
+
                     case UNMARK:
                         index = Integer.parseInt(action[1]);
                         taskList.get(index - 1).unmarkTask();
                         System.out.println("ohh.... slowpoke!!");
                         System.out.println(taskList.get(index - 1).toString());
                         break;
+
                     case DELETE:
                         index = Integer.parseInt(action[1]);
                         System.out.println("oke... i kill!! say bai bai to:");
@@ -92,6 +98,7 @@ public class Chiikawa {
                         taskList.remove(index - 1);
                         System.out.println("now only have " + Task.getTaskCount() + " tasks...");
                         break;
+
                     case TODO:
                         if (action.length != 2) {
                             throw new ChiikawaException("no name!! u giv no name!!");
@@ -103,6 +110,7 @@ public class Chiikawa {
                         System.out.println("  " + newToDoTask.toString());
                         System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
                         break;
+
                     case DEADLINE:
                         specifiedTime = action[1].split("/");
 
@@ -116,6 +124,7 @@ public class Chiikawa {
                         System.out.println("  " + newDeadlineTask.toString());
                         System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
                         break;
+
                     case EVENT:
                         specifiedTime = action[1].split("/");
 
