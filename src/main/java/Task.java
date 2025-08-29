@@ -9,7 +9,7 @@ public class Task {
     }
 
     public String getStatusIcon() {
-        return (this.isCompleted ? "X" : " ");
+        return (this.isCompleted ? "1" : "0");
     }
 
     public void markTask() {
@@ -30,6 +30,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "[" + this.getStatusIcon() + "] " + this.name;
+        return "| " + this.getStatusIcon() + "| " + this.name;
     }
 }
