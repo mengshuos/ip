@@ -9,7 +9,7 @@ public class Chiikawa {
         String nextLine = "";
         String[] action;
         String[] specifiedTime;
-        FileManagement listFile = new FileManagement("../../../data/list.txt");
+        FileManagement listFile = new FileManagement("./data/list.txt");
 
         enum Actions {
             TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE
@@ -46,6 +46,8 @@ public class Chiikawa {
         System.out.println("you... do somethin'?");
         System.out.println("__________________________________________________________________");
 
+        taskList = listFile.loadFile();
+
         while (true) {
             try {
                 nextLine = scanner.nextLine();
@@ -65,6 +67,7 @@ public class Chiikawa {
                 switch(currAction) {
                     case BYE:
                         System.out.println("bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎");
+                        listFile.saveFile(taskList);
                         scanner.close();
                         return;
 
@@ -72,7 +75,7 @@ public class Chiikawa {
                         System.out.println("i- i twhink these you tasks...?");
                         for (int i = 0; i < taskList.size(); i++) {
                             Task currTask = taskList.get(i);
-                            System.out.println((i + 1) + "." + currTask.toString());
+                            System.out.println((i + 1) + ". " + currTask.toString());
                         }
                         break;
 
