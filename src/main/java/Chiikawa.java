@@ -9,7 +9,7 @@ public class Chiikawa {
         String nextLine = "";
         String[] action;
         String[] specifiedTime;
-        FileManagement listFile = new FileManagement("./data/list.txt");
+        FileManagement listFile = new FileManagement("./data/list.txt", "./data");
 
         enum Actions {
             TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE
@@ -122,7 +122,7 @@ public class Chiikawa {
                         }
 
                         System.out.println("ohh! de..deadline?! uuuhh, me add me add:");
-                        DeadlineTask newDeadlineTask = new DeadlineTask(specifiedTime[0], specifiedTime[1]);
+                        DeadlineTask newDeadlineTask = new DeadlineTask(specifiedTime[0].strip(), specifiedTime[1].strip());
                         taskList.add(newDeadlineTask);
                         System.out.println("  " + newDeadlineTask.toString());
                         System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
@@ -136,11 +136,15 @@ public class Chiikawa {
                         }
 
                         System.out.println("wowzies! yayy! can me go? me add me add:");
-                        EventTask newEventTask = new EventTask(specifiedTime[0], specifiedTime[1], specifiedTime[2]);
+                        EventTask newEventTask = new EventTask(
+                                specifiedTime[0].strip(),
+                                specifiedTime[1].strip(),
+                                specifiedTime[2].strip());
                         taskList.add(newEventTask);
                         System.out.println("  " + newEventTask.toString());
                         System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
                         break;
+
                 }
             } catch (ChiikawaException e) {
                 System.out.println(e.toString());
