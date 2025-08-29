@@ -8,15 +8,11 @@ public class Parser {
         TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE
     }
 
-    public void parse(String fullCommand) {
+    public Command parse(String fullCommand) {
         fullCommand = fullCommand.strip();
-        String[] fullCommandArray = fullCommand.split(" ", 2);
         Commands command = null;
-
-        // Clean the strings of whitespaces.
-        for (int i = 0; i < fullCommandArray.length; i++) {
-            fullCommandArray[i].strip();
-        }
+        String[] fullCommandArray = fullCommand.split(" ", 2);
+        String taskInfo = fullCommandArray[1].strip();
 
         try {
             command = Commands.valueOf(fullCommandArray[0].toUpperCase());
@@ -25,58 +21,31 @@ public class Parser {
             // do something.
         }
 
+
         switch (command) {
             case BYE:
-                // UI print "bye~ bye~!! soon... see soon? ₍ᐢ.  ̫.ᐢ₎"
-                // Storage save the arraylist
-                break;
+                return new ExitCommand();
 
             case LIST:
-                // UI print "i- i twhink these you tasks...?"
-                // Access every element in the ArrayList and print them out
-                break;
+                return new ListCommand();
 
             case MARK:
-                // UI print "okee! you finis~~"
-                // UI print the task that they finished
-                // TaskList marks the task as finished
-                break;
+                return new MarkCommand(taskInfo);
 
             case UNMARK:
-                // UI print "ohh.... slowpoke!!"
-                // UI print the task that is unmarked
-                // TaskList unmark the task
-                break;
+                return new UnmarkCommand(taskInfo);
 
             case DELETE:
-                // UI print "oke... i kill!! say bai bai to:"
-                // UI print the task that is to be deeleted
-                // TaskList remove the task
-                // UI print the number of tasks left, "now only have " + Task.getTaskCount() + " tasks..."
-                break;
+                return new DeleteCommand(taskInfo);
 
             case TODO:
-                // UI print "wahhh! oke, me add add:"
-                // TaskList add todo task
-                // UI print the task to be added
-                // UI print the System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
-                break;
+                return new AddToDoCommand(taskInfo);
 
             case DEADLINE:
-                // Splits the command further into task with deadline date
-                // UI print System.out.println("ohh! de..deadline?! uuuhh, me add me add:");
-                // TaskList add deadline task
-                // UI print the task to be added
-                // UI print the System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
-                break;
+                return new AddDeadlineCommand(taskInfo);
 
             case EVENT:
-                // Splits the command further into task with 2 dates
-                // UI print System.out.println("wowzies! yayy! can me go? me add me add:");
-                // TaskList create new event task
-                // UI print the task to be added
-                // UI print the System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
-                break;
+                return new AddEventCommand(taskInfo);
         }
     }
 }
