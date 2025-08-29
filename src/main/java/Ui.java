@@ -46,6 +46,18 @@ public class Ui {
         System.out.println("wuuu! " + Task.getTaskCount() + " tasks in list now!");
     }
 
+    public void showInvalid() {
+        System.out.println("wha...wha? i dun kno... scawy...");
+    }
+
+    public void showError(String errorMessage) {
+        System.out.println("they.. they say!! " + errorMessage);
+    }
+
+    public void showLoadingError() {
+        System.out.println("load loadin loadin pwobem!!");
+    }
+
     public void showWelcome() {
         String chiikawaArt =
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⠿⣶⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠟⠿⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
