@@ -16,8 +16,7 @@ public class Storage {
 
         // Checking if parent directory exists.
         if (!parentDir.exists()) {
-            // Call UI function to print out error.
-            // Placeholder print statements.
+            // THROW ERROR THAT HAS THE FOLLOWING PRINTS
             System.out.println("diwectory nawt faound!!");
             System.out.println("i make, no worry");
             parentDir.mkdirs();
@@ -26,12 +25,13 @@ public class Storage {
         // Checking if the file exists.
         try {
             if (!f.exists()) {
+                // THROW ERROR THAT HAS THE FOLLOWING PRINTS
                 System.out.println("file nawt faound!!");
                 System.out.println("i make, no worry");
                 f.createNewFile();
             }
         } catch (IOException e) {
-            // Placeholder for UI function to print.
+            // NEED FIX TMR
         }
     }
 
@@ -48,33 +48,34 @@ public class Storage {
 
         while(s.hasNextLine()) {
             // Placeholder for parser that would return a String[] containing information we need.
-            String[] line = s.nextLine().split("\\|", 4);
-            boolean isCompleted = line[1].strip().equals("1");
-            switch (line[0].strip()) {
+            String[] line = Parser.parseTaskInfo(s.nextLine(), "\\|", 4);
+            boolean isCompleted = line[1].equals("1");
+            switch (line[0]) {
                 case "T":
                     // Create ToDoTask.
                     // Placeholder for TaskList function that adds new Task.
-                    ToDoTask newToDoTask = new ToDoTask(line[2].strip(), isCompleted);
+                    ToDoTask newToDoTask = new ToDoTask(line[2], isCompleted);
                     taskList.add(newToDoTask);
                     break;
 
                 case "D":
                     // Create DeadlineTask.
                     // Placeholder for TaskList function that adds new Task.
-                    DeadlineTask newDeadlineTask = new DeadlineTask(line[2].strip(),
+                    DeadlineTask newDeadlineTask = new DeadlineTask(line[2],
                             isCompleted,
-                            line[3].strip());
+                            line[3]);
                     taskList.add(newDeadlineTask);
                     break;
 
                 case "E":
                     // Create EventTask.
                     // Placeholder for TaskList function that adds new Task.
-                    String[] eventTime = line[3].split("to");
-                    EventTask newEventTask = new EventTask(line[2].strip(),
+                    String[] eventTime = Parser.parseTaskInfo(line[3], "to", 2);
+                    EventTask newEventTask = new EventTask(
+                            line[2],
                             isCompleted,
-                            eventTime[0].strip(),
-                            eventTime[1].strip());
+                            eventTime[0],
+                            eventTime[1]);
                     taskList.add(newEventTask);
                     break;
             }
@@ -92,6 +93,7 @@ public class Storage {
             fw.close();
 
         } catch (IOException e) {
+            // THROW ERROR THAT DOES THE FOLLOWING
             // Placeholder for UI function.
             System.out.println(e);
             System.out.println("file got pwoblem!");

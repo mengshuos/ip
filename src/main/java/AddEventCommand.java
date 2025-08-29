@@ -2,7 +2,7 @@ public class AddEventCommand extends Command {
     private String[] taskInfoArray;
 
     public AddEventCommand(String taskInfo) {
-        this.taskInfoArray = Parser.parseTaskInfo((taskInfo));
+        this.taskInfoArray = Parser.parseTaskInfo(taskInfo, "/", 3);
     }
 
     @Override

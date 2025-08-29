@@ -50,8 +50,8 @@ public class Parser {
         }
     }
 
-    public static String[] parseTaskInfo(String taskInfo) {
-        String[] taskInfoArray = taskInfo.split("/");
+    public static String[] parseTaskInfo(String taskInfo, String regex, int limit) {
+        String[] taskInfoArray = taskInfo.split(regex, limit);
 
         for (int i = 0; i < taskInfoArray.length; i++) {
             taskInfoArray[i] = taskInfoArray[i].strip();
