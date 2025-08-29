@@ -15,21 +15,25 @@ public class TaskList {
         return this.taskList;
     }
 
-    public void markTask(int index) {
+    public Task markTask(int index) {
         this.taskList.get(index).markTask();
+        return this.taskList.get(index);
     }
 
-    public void unmarkTask(int index) {
+    public Task unmarkTask(int index) {
         this.taskList.get(index).unmarkTask();
+        return this.taskList.get(index);
     }
 
     public void addTask(Task newTask) {
         this.taskList.add(newTask);
     }
 
-    public void deleteTask(int index) {
-        this.taskList.get(index).deleteTask();
+    public Task deleteTask(int index) {
+        Task deletedTask = this.taskList.get(index);
+        deletedTask.deleteTask();
         this.taskList.remove(index);
+        return deletedTask;
     }
 
     @Override
