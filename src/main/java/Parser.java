@@ -8,7 +8,7 @@ public class Parser {
         TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE
     }
 
-    public Command parse(String fullCommand) {
+    public static Command parse(String fullCommand) {
         fullCommand = fullCommand.strip();
         Commands command = null;
         String[] fullCommandArray = fullCommand.split(" ", 2);
@@ -17,10 +17,8 @@ public class Parser {
         try {
             command = Commands.valueOf(fullCommandArray[0].toUpperCase());
         } catch (IllegalArgumentException e) {
-            // UI print ChiikawaException string
-            // do something.
+            return new InvalidCommand();
         }
-
 
         switch (command) {
             case BYE:
@@ -46,6 +44,19 @@ public class Parser {
 
             case EVENT:
                 return new AddEventCommand(taskInfo);
+
+            default:
+                return new InvalidCommand();
         }
+    }
+
+    public static String[] parseTaskInfo(String taskInfo) {
+        String[] taskInfoArray = taskInfo.split("/");
+
+        for (int i = 0; i < taskInfoArray.length; i++) {
+            taskInfoArray[i] = taskInfoArray[i].strip();
+        }
+
+        return taskInfoArray;
     }
 }

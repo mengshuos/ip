@@ -38,7 +38,7 @@ public class Ui {
             System.out.println("wahhh! oke, me add add:");
         } else if (newTask instanceof DeadlineTask) {
             System.out.println("ohh! de..deadline?! uuuhh, me add me add:");
-        } else if (newTask instanceof  EventTask) {
+        } else if (newTask instanceof EventTask) {
             System.out.println("wowzies! yayy! can me go? me add me add:");
         }
 
