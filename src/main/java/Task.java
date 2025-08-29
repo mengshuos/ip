@@ -1,4 +1,12 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Task {
+    private final Pattern PATTERN = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
+    private Matcher matcher;
+
     protected String name;
     protected boolean isCompleted = false;
     private static int TASK_COUNT = 0;
@@ -32,6 +40,20 @@ public class Task {
 
     public void deleteTask() {
         TASK_COUNT--;
+    }
+
+    protected String reformatTime(String time) {
+        matcher = PATTERN.matcher(time);
+        LocalDate localDateTime = null;
+        String formattedDate = "";
+
+        if (matcher.find()) {
+            time = matcher.group();
+            localDateTime = LocalDate.parse(time);
+            formattedDate = localDateTime.format(DateTimeFormatter.ofPattern("MMM d yyyy"));
+        }
+
+        return formattedDate;
     }
 
     @Override

@@ -2,23 +2,31 @@
  * Class for Events which are tasks that start at a specific date/time and ends at specific date/time.
  */
 public class EventTask extends Task {
-    private String startTime;
-    private String endTime;
+    private String startTime = "";
+    private String endTime = "";
+    private String formattedStartTime = "";
+    private String formattedEndTime = "";
 
     public EventTask(String name, String startTime, String endTime) {
         super(name);
         this.startTime = startTime;
         this.endTime = endTime;
+        this.formattedStartTime = super.reformatTime(this.startTime);
+        this.formattedEndTime = super.reformatTime(this.endTime);
     }
 
     public EventTask(String name, boolean isCompleted, String startTime, String endTime) {
         super(name, isCompleted);
         this.startTime = startTime;
         this.endTime = endTime;
+        this.formattedStartTime = super.reformatTime(this.startTime);
+        this.formattedEndTime = super.reformatTime(this.endTime);
     }
 
     @Override
     public String toString() {
-        return "E " + super.toString() + " | " + this.startTime + " to " + this.endTime;
+        String outputStartTime = this.formattedStartTime == "" ? this.startTime : this.formattedStartTime;
+        String outputEndTime = this.formattedEndTime == "" ? this.endTime : this.formattedEndTime;
+        return "E " + super.toString() + " | " + outputStartTime + " to " + outputEndTime;
     }
 }
