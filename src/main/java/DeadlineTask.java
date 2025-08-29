@@ -9,8 +9,13 @@ public class DeadlineTask extends Task {
         this.deadline = deadline;
     }
 
+    public DeadlineTask(String name, boolean isCompleted, String deadline) {
+        super(name, isCompleted);
+        this.deadline = deadline;
+    }
+
     @Override
     public String toString() {
-        return "[D]" + super.toString() + "(by: " + this.deadline + ")";
+        return "D " + super.toString() + " | " + this.deadline;
     }
 }

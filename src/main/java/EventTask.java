@@ -11,8 +11,14 @@ public class EventTask extends Task {
         this.endTime = endTime;
     }
 
+    public EventTask(String name, boolean isCompleted, String startTime, String endTime) {
+        super(name, isCompleted);
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
     @Override
     public String toString() {
-        return "[E]" + super.toString() + "(from: " + this.startTime + "to: " + this.endTime + ")";
+        return "E " + super.toString() + " | " + this.startTime + " to " + this.endTime;
     }
 }
