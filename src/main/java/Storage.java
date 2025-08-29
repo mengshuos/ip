@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -82,6 +83,18 @@ public class Storage {
     }
 
     public void saveFile(ArrayList<Task> taskList) {
-        return;
+        try {
+            FileWriter fw = new FileWriter(this.filePath, false);
+            for (int i = 0; i < taskList.size(); i++) {
+                Task currTask = taskList.get(i);
+                fw.append(currTask.toString() + "\n");
+            }
+            fw.close();
+
+        } catch (IOException e) {
+            // Placeholder for UI function.
+            System.out.println(e);
+            System.out.println("file got pwoblem!");
+        }
     }
 }
