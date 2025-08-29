@@ -15,6 +15,7 @@ public class FileManagement {
     public ArrayList<Task> loadFile() {
         File f = new File(this.filePath);
         Scanner s = null;
+        ArrayList<Task> taskList = new ArrayList<>();
 
         try {
             if (!f.exists()) {
@@ -27,11 +28,10 @@ public class FileManagement {
             System.out.println("something wrong!!");
         }
 
-        ArrayList<Task> taskList = new ArrayList<>();
         while(s.hasNextLine()) {
             String[] line = s.nextLine().split("\\|", 4);
             boolean isCompleted = line[1].strip().equals("1");
-            switch (line[0]) {
+            switch (line[0].strip()) {
                 case "T":
                     // Create ToDoTask.
                     ToDoTask newToDoTask = new ToDoTask(line[2].strip(), isCompleted);
@@ -57,7 +57,6 @@ public class FileManagement {
                     break;
             }
         }
-
         return taskList;
     }
 
