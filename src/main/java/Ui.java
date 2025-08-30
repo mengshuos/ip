@@ -54,7 +54,7 @@ public class Ui {
     }
 
     public void showError(String errorMessage) {
-        System.out.println("they.. they say!! " + errorMessage);
+        System.out.println("uh oh.." + errorMessage);
     }
 
     public void showLoadingError() {

@@ -1,13 +1,29 @@
+import java.util.Objects;
+
 public class DeleteCommand extends Command {
-    private int index;
+    private String indexStr;
 
     public DeleteCommand(String command) {
-        this.index = Integer.parseInt(command);
+        this.indexStr = command;
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
-        Task deletedTask = tasks.deleteTask(this.index);
-        ui.showDelete(deletedTask);
+    public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
+        if (Objects.equals(this.indexStr, "")) {
+            throw new ChiikawaException("you give me nothin!! delete wat?!");
+        }
+
+        try {
+            int index = Integer.parseInt(this.indexStr);
+
+            if (index > Task.getTaskCount() || index <= 0) {
+                throw new ChiikawaException("no more, wat u doin!!");
+            }
+
+            Task deletedTask = tasks.deleteTask(index);
+            ui.showDelete(deletedTask);
+        } catch (NumberFormatException e) {
+            throw new ChiikawaException("giv 1 numba!! 1!! number!!! only!!!!");
+        }
     }
 }

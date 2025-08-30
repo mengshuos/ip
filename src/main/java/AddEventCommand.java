@@ -6,7 +6,17 @@ public class AddEventCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
+    public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
+        if (taskInfoArray.length != 3) {
+            throw new ChiikawaException("you no give enuff info!! more more!!!!");
+        }
+
+        for (String s: taskInfoArray) {
+            if (s.isEmpty()) {
+                throw new ChiikawaException("blank!! u gave me blanks!!");
+            }
+        }
+
         EventTask newEventTask = new EventTask(
                 this.taskInfoArray[0],
                 this.taskInfoArray[1],

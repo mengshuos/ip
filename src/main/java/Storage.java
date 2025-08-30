@@ -21,7 +21,7 @@ public class Storage {
 
         if (!this.parentDir.exists()) {
             this.parentDir.mkdirs();
-            throw new ChiikawaException("diwectory nawt faound!!\ni make, no worry")
+            throw new ChiikawaException("diwectory nawt faound!!\ni make, no worry");
         }
 
         if (!this.f.exists()) {
