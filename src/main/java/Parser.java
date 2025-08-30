@@ -19,6 +19,11 @@ public class Parser {
             return new InvalidCommand();
         }
 
+        String taskInfo = "";
+        if (fullCommandArray.length == 2) {
+            taskInfo = fullCommandArray[1];
+        }
+
         switch (command) {
             case BYE:
                 return new ExitCommand();
@@ -27,22 +32,22 @@ public class Parser {
                 return new ListCommand();
 
             case MARK:
-                return new MarkCommand(fullCommandArray[1]);
+                return new MarkCommand(taskInfo);
 
             case UNMARK:
-                return new UnmarkCommand(fullCommandArray[1]);
+                return new UnmarkCommand(taskInfo);
 
             case DELETE:
-                return new DeleteCommand(fullCommandArray[1]);
+                return new DeleteCommand(taskInfo);
 
             case TODO:
-                return new AddToDoCommand(fullCommandArray[1]);
+                return new AddToDoCommand(taskInfo);
 
             case DEADLINE:
-                return new AddDeadlineCommand(fullCommandArray[1]);
+                return new AddDeadlineCommand(taskInfo);
 
             case EVENT:
-                return new AddEventCommand(fullCommandArray[1]);
+                return new AddEventCommand(taskInfo);
 
             default:
                 return new InvalidCommand();

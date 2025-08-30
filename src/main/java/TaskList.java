@@ -16,13 +16,13 @@ public class TaskList {
     }
 
     public Task markTask(int index) {
-        this.taskList.get(index).markTask();
-        return this.taskList.get(index);
+        this.taskList.get(index - 1).markTask();
+        return this.taskList.get(index - 1);
     }
 
     public Task unmarkTask(int index) {
-        this.taskList.get(index).unmarkTask();
-        return this.taskList.get(index);
+        this.taskList.get(index - 1).unmarkTask();
+        return this.taskList.get(index - 1);
     }
 
     public void addTask(Task newTask) {
@@ -30,9 +30,9 @@ public class TaskList {
     }
 
     public Task deleteTask(int index) {
-        Task deletedTask = this.taskList.get(index);
+        Task deletedTask = this.taskList.get(index - 1);
         deletedTask.deleteTask();
-        this.taskList.remove(index);
+        this.taskList.remove(index - 1);
         return deletedTask;
     }
 
