@@ -1,4 +1,4 @@
-import java.util.Objects;
+package chiikawa.task;
 
 /**
  * Class for Tasks with deadlines, due before a specific date/time.
@@ -21,7 +21,7 @@ public class DeadlineTask extends Task {
 
     @Override
     public String toString() {
-        String outputTime = Objects.equals(this.formattedDeadline, "") ? this.deadline : this.formattedDeadline;
+        String outputTime = this.formattedDeadline.isEmpty() ? this.deadline : this.formattedDeadline;
         return "D " + super.toString() + " | " + outputTime;
     }
 }

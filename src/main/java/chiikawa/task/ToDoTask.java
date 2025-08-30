@@ -1,3 +1,5 @@
+package chiikawa.task;
+
 /**
  * Class for ToDos which do not have any date/time attached to it.
  */

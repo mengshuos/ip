@@ -1,5 +1,8 @@
+package chiikawa;
+
 import java.util.Objects;
 import java.util.Scanner;
+import chiikawa.task.*;
 
 public class Ui {
     private Scanner scanner = new Scanner(System.in);

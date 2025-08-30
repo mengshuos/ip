@@ -1,15 +1,21 @@
-import java.util.Objects;
+package chiikawa.command;
 
-public class DeleteCommand extends Command {
+import chiikawa.Ui;
+import chiikawa.TaskList;
+import chiikawa.Storage;
+import chiikawa.ChiikawaException;
+import chiikawa.task.Task;
+
+public class MarkCommand extends Command {
     private String indexStr;
 
-    public DeleteCommand(String command) {
+    public MarkCommand(String command) {
         this.indexStr = command;
     }
 
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
-        if (Objects.equals(this.indexStr, "")) {
+        if (this.indexStr.isEmpty()) {
             throw new ChiikawaException("you give me nothin!! delete wat?!");
         }
 
@@ -20,10 +26,12 @@ public class DeleteCommand extends Command {
                 throw new ChiikawaException("no more, wat u doin!!");
             }
 
-            Task deletedTask = tasks.deleteTask(index);
-            ui.showDelete(deletedTask);
+            Task markedTask = tasks.markTask(index);
+            ui.showMark(markedTask);
         } catch (NumberFormatException e) {
             throw new ChiikawaException("giv 1 numba!! 1!! number!!! only!!!!");
         }
+
+
     }
 }

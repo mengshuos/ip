@@ -1,3 +1,13 @@
+package chiikawa.command;
+
+import chiikawa.Ui;
+import chiikawa.Parser;
+import chiikawa.TaskList;
+import chiikawa.Storage;
+import chiikawa.ChiikawaException;
+import chiikawa.task.DeadlineTask;
+
+
 public class AddDeadlineCommand extends Command {
     private String[] taskInfoArray;
 

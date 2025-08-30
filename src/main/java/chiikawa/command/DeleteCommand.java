@@ -1,15 +1,21 @@
-import java.util.Objects;
+package chiikawa.command;
 
-public class UnmarkCommand extends Command {
+import chiikawa.Ui;
+import chiikawa.TaskList;
+import chiikawa.Storage;
+import chiikawa.ChiikawaException;
+import chiikawa.task.Task;
+
+public class DeleteCommand extends Command {
     private String indexStr;
 
-    public UnmarkCommand(String command) {
+    public DeleteCommand(String command) {
         this.indexStr = command;
     }
 
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
-        if (Objects.equals(this.indexStr, "")) {
+        if (this.indexStr.isEmpty()) {
             throw new ChiikawaException("you give me nothin!! delete wat?!");
         }
 
@@ -20,8 +26,8 @@ public class UnmarkCommand extends Command {
                 throw new ChiikawaException("no more, wat u doin!!");
             }
 
-            Task unmarkedTask = tasks.unmarkTask(index);
-            ui.showUnmark(unmarkedTask);
+            Task deletedTask = tasks.deleteTask(index);
+            ui.showDelete(deletedTask);
         } catch (NumberFormatException e) {
             throw new ChiikawaException("giv 1 numba!! 1!! number!!! only!!!!");
         }

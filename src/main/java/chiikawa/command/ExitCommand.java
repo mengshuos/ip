@@ -1,3 +1,10 @@
+package chiikawa.command;
+
+import chiikawa.Ui;
+import chiikawa.TaskList;
+import chiikawa.Storage;
+import chiikawa.ChiikawaException;
+
 public class ExitCommand extends Command {
     public ExitCommand() {
         super.isExit = true;

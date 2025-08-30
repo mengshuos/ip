@@ -1,3 +1,12 @@
+package chiikawa.command;
+
+import chiikawa.Ui;
+import chiikawa.Parser;
+import chiikawa.TaskList;
+import chiikawa.Storage;
+import chiikawa.ChiikawaException;
+import chiikawa.task.EventTask;
+
 public class AddEventCommand extends Command {
     private String[] taskInfoArray;
 
