@@ -11,8 +11,7 @@ public class Parser {
     public static Command parse(String fullCommand) {
         fullCommand = fullCommand.strip();
         Commands command = null;
-        String[] fullCommandArray = fullCommand.split(" ", 2);
-        String taskInfo = fullCommandArray[1].strip();
+        String[] fullCommandArray = parseTaskInfo(fullCommand, " ", 2);
 
         try {
             command = Commands.valueOf(fullCommandArray[0].toUpperCase());
@@ -28,22 +27,22 @@ public class Parser {
                 return new ListCommand();
 
             case MARK:
-                return new MarkCommand(taskInfo);
+                return new MarkCommand(fullCommandArray[1]);
 
             case UNMARK:
-                return new UnmarkCommand(taskInfo);
+                return new UnmarkCommand(fullCommandArray[1]);
 
             case DELETE:
-                return new DeleteCommand(taskInfo);
+                return new DeleteCommand(fullCommandArray[1]);
 
             case TODO:
-                return new AddToDoCommand(taskInfo);
+                return new AddToDoCommand(fullCommandArray[1]);
 
             case DEADLINE:
-                return new AddDeadlineCommand(taskInfo);
+                return new AddDeadlineCommand(fullCommandArray[1]);
 
             case EVENT:
-                return new AddEventCommand(taskInfo);
+                return new AddEventCommand(fullCommandArray[1]);
 
             default:
                 return new InvalidCommand();
