@@ -1,3 +1,5 @@
+package chiikawa.task;
+
 /**
  * Class for Events which are tasks that start at a specific date/time and ends at specific date/time.
  */
@@ -25,8 +27,8 @@ public class EventTask extends Task {
 
     @Override
     public String toString() {
-        String outputStartTime = this.formattedStartTime == "" ? this.startTime : this.formattedStartTime;
-        String outputEndTime = this.formattedEndTime == "" ? this.endTime : this.formattedEndTime;
+        String outputStartTime = this.formattedStartTime.isEmpty() ? this.startTime : this.formattedStartTime;
+        String outputEndTime = this.formattedEndTime.isEmpty() ? this.endTime : this.formattedEndTime;
         return "E " + super.toString() + " | " + outputStartTime + " to " + outputEndTime;
     }
 }

@@ -1,4 +1,7 @@
+package chiikawa;
+
 import java.util.ArrayList;
+import chiikawa.task.*;
 
 public class TaskList {
     private ArrayList<Task> taskList;

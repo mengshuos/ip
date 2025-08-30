@@ -1,3 +1,7 @@
+package chiikawa;
+
+import chiikawa.command.*;
+
 /**
  * Parser makes sense of the user's commands. It will only interpret what the user wants to do and
  * carry out the corresponding command. The only check should be for invalid commands, all other checks

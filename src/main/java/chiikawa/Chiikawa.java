@@ -1,3 +1,7 @@
+package chiikawa;
+
+import chiikawa.command.*;
+
 public class Chiikawa {
     private Storage storage;
     private TaskList tasks;

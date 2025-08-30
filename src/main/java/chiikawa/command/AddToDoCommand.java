@@ -1,4 +1,11 @@
-import java.util.Objects;
+package chiikawa.command;
+
+import chiikawa.Ui;
+import chiikawa.TaskList;
+import chiikawa.Storage;
+import chiikawa.ChiikawaException;
+import chiikawa.task.ToDoTask;
+
 
 public class AddToDoCommand extends Command {
     private String taskInfo;
@@ -9,7 +16,7 @@ public class AddToDoCommand extends Command {
 
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
-        if (Objects.equals(taskInfo, "")) {
+        if (taskInfo.isEmpty()) {
             throw new ChiikawaException("no name! where name!!");
         }
 
