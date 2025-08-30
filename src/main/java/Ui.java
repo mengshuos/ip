@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Ui {
@@ -14,7 +15,9 @@ public class Ui {
 
     public void showList(TaskList taskList) {
         System.out.println("i- i twhink these you tasks...?");
-        System.out.println(taskList);
+        if (!Objects.equals(taskList.toString(), "")) {
+            System.out.println(taskList);
+        }
     }
 
     public void showMark(Task markedTask) {
