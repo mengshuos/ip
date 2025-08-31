@@ -58,16 +58,12 @@ public class Task {
         this.isCompleted = false;
     }
 
-    /**
-     * Getter for the total number of tasks that has not been deleted.
-     * @return The total number of tasks that has not been deleted.
-     */
     public static int getTaskCount() {
         return TASK_COUNT;
     }
 
     /**
-     * Decrement the number of tasks that has not been deleted.
+     * Decrements the number of tasks that has not been deleted.
      */
     public void deleteTask() {
         TASK_COUNT--;

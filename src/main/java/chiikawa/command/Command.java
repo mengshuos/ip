@@ -12,8 +12,7 @@ public abstract class Command {
     protected boolean isExit = false;
 
     /**
-     * Execute the corresponding commands.
-     *
+     * Executes the corresponding commands.
      * @param tasks TaskList that holds all the current tasks.
      * @param ui Ui that is in charge of all the outputs to the screen.
      * @param storage Storage that is in charge of saving and loading save files.

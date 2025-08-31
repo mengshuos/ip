@@ -18,7 +18,6 @@ public class Storage {
 
     /**
      * Constructor for a new instance of Storage
-     *
      * @param filePath The path where the save file can be found.
      */
     public Storage(String filePath) {
@@ -29,7 +28,6 @@ public class Storage {
 
     /**
      * Loads the save file from the hard disk.
-     *
      * @return ArrayList consisting of all the Tasks saved in the save file.
      * @throws ChiikawaException Throws different exceptions such as missing directory or file.
      */
@@ -90,7 +88,6 @@ public class Storage {
 
     /**
      * Saves the file to the hard disk.
-     *
      * @param taskList The ArrayList of tasks to be saved into the hard disk.
      * @throws ChiikawaException
      */

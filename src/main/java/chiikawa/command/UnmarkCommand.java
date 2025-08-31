@@ -7,7 +7,7 @@ import chiikawa.ChiikawaException;
 import chiikawa.task.Task;
 
 /**
- * Ckass for unmarking a task from complete to incomplete.
+ * Class for unmarking a task from complete to incomplete.
  */
 public class UnmarkCommand extends Command {
     private String indexStr;

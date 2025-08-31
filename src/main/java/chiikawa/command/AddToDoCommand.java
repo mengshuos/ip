@@ -14,7 +14,7 @@ public class AddToDoCommand extends Command {
 
     /**
      * Constructor that takes in String representation of the taskInfo and converts it to String array.
-     * * @param taskInfo String representation of the rest of the user's input.
+     * @param taskInfo String representation of the rest of the user's input.
      */
     public AddToDoCommand(String taskInfo) {
         this.taskInfo = taskInfo.strip();
