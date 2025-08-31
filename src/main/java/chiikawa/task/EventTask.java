@@ -9,6 +9,12 @@ public class EventTask extends Task {
     private String formattedStartTime = "";
     private String formattedEndTime = "";
 
+    /**
+     * Constructor for creating new event tasks by user.
+     * @param name Name of the task.
+     * @param startTime Starting time of the task.
+     * @param endTime Ending time of the task.
+     */
     public EventTask(String name, String startTime, String endTime) {
         super(name);
         this.startTime = startTime;
@@ -17,6 +23,13 @@ public class EventTask extends Task {
         this.formattedEndTime = super.reformatTime(this.endTime);
     }
 
+    /**
+     * Constructor for creating new event tasks as they are loaded from save file.
+     * @param name Name of the task.
+     * @param isCompleted Status of the task.
+     * @param startTime Starting time of the task.
+     * @param endTime Ending time of the task.
+     */
     public EventTask(String name, boolean isCompleted, String startTime, String endTime) {
         super(name, isCompleted);
         this.startTime = startTime;

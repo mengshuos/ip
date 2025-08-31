@@ -7,17 +7,32 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import chiikawa.task.*;
 
+/**
+ * Class representing the storage system of Chiikawa,
+ * saving and loading the file from the hard disk.
+ */
 public class Storage {
     private String filePath;
     private File f;
     private File parentDir;
 
+    /**
+     * Constructor for a new instance of Storage
+     *
+     * @param filePath The path where the save file can be found.
+     */
     public Storage(String filePath) {
         this.filePath = filePath;
         this.f = new File(filePath);
         this.parentDir = f.getParentFile();
     }
 
+    /**
+     * Loads the save file from the hard disk.
+     *
+     * @return ArrayList consisting of all the Tasks saved in the save file.
+     * @throws ChiikawaException Throws different exceptions such as missing directory or file.
+     */
     public ArrayList<Task> loadFile() throws ChiikawaException {
         Scanner s = null;
         ArrayList<Task> taskList = new ArrayList<>();
@@ -73,6 +88,12 @@ public class Storage {
         return taskList;
     }
 
+    /**
+     * Saves the file to the hard disk.
+     *
+     * @param taskList The ArrayList of tasks to be saved into the hard disk.
+     * @throws ChiikawaException
+     */
     public void saveFile(ArrayList<Task> taskList) throws ChiikawaException {
         try {
             FileWriter fw = new FileWriter(this.filePath, false);

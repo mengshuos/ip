@@ -6,9 +6,16 @@ import chiikawa.Storage;
 import chiikawa.ChiikawaException;
 import chiikawa.task.Task;
 
+/**
+ * Ckass for unmarking a task from complete to incomplete.
+ */
 public class UnmarkCommand extends Command {
     private String indexStr;
 
+    /**
+     * Constructor that takes in a String representation of the rest of the user's command.
+     * @param command String representation of the rest of the user's command.
+     */
     public UnmarkCommand(String command) {
         this.indexStr = command;
     }

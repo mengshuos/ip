@@ -12,6 +12,16 @@ public class Parser {
         TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE
     }
 
+    /**
+     * Takes in a String that represents the command users want to carry out
+     * and then returns the corresponding Command class.
+     *
+     * If the command given by the user is invalid, return the InvalidCommand
+     * which represents an invalid command.
+     *
+     * @param fullCommand The command the user entered.
+     * @return The corresponding command to what the user entered.
+     */
     public static Command parse(String fullCommand) {
         fullCommand = fullCommand.strip();
         Commands command = null;
@@ -58,6 +68,16 @@ public class Parser {
         }
     }
 
+    /**
+     * Takes in a String taskInfo, strips it of whitespaces, and then splits it
+     * according to the regex and limit specified by the user. Takes in the String
+     * and converts it to an array of Strings, withholding the information provided by the user.
+     *
+     * @param taskInfo Text that the user entered after the command keyword.
+     * @param regex The String that taskInfo will be split by.
+     * @param limit The number of elements in the String array.
+     * @return String array consisting of task information stripped and split.
+     */
     public static String[] parseTaskInfo(String taskInfo, String regex, int limit) {
         String[] taskInfoArray = taskInfo.strip().split(regex, limit);
 
