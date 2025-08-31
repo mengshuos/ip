@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import chiikawa.task.*;
 
 public class Storage {
@@ -47,27 +48,27 @@ public class Storage {
             boolean isCompleted = line[1].equals("1");
             String command = line[0];
             switch (command) {
-                case "T":
-                    ToDoTask newToDoTask = new ToDoTask(line[2], isCompleted);
-                    taskList.add(newToDoTask);
-                    break;
+            case "T":
+                ToDoTask newToDoTask = new ToDoTask(line[2], isCompleted);
+                taskList.add(newToDoTask);
+                break;
 
-                case "D":
-                    DeadlineTask newDeadlineTask = new DeadlineTask(line[2],
-                            isCompleted,
-                            line[3]);
-                    taskList.add(newDeadlineTask);
-                    break;
+            case "D":
+                DeadlineTask newDeadlineTask = new DeadlineTask(line[2],
+                        isCompleted,
+                        line[3]);
+                taskList.add(newDeadlineTask);
+                break;
 
-                case "E":
-                    String[] eventTime = Parser.parseTaskInfo(line[3], "to", 2);
-                    EventTask newEventTask = new EventTask(
-                            line[2],
-                            isCompleted,
-                            eventTime[0],
-                            eventTime[1]);
-                    taskList.add(newEventTask);
-                    break;
+            case "E":
+                String[] eventTime = Parser.parseTaskInfo(line[3], "to", 2);
+                EventTask newEventTask = new EventTask(
+                        line[2],
+                        isCompleted,
+                        eventTime[0],
+                        eventTime[1]);
+                taskList.add(newEventTask);
+                break;
             }
         }
         return taskList;

@@ -6,7 +6,6 @@ import chiikawa.Storage;
 import chiikawa.ChiikawaException;
 import chiikawa.task.ToDoTask;
 
-
 public class AddToDoCommand extends Command {
     private String taskInfo;
 

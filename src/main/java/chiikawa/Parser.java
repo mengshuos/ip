@@ -29,32 +29,24 @@ public class Parser {
         }
 
         switch (command) {
-            case BYE:
-                return new ExitCommand();
-
-            case LIST:
-                return new ListCommand();
-
-            case MARK:
-                return new MarkCommand(taskInfo);
-
-            case UNMARK:
-                return new UnmarkCommand(taskInfo);
-
-            case DELETE:
-                return new DeleteCommand(taskInfo);
-
-            case TODO:
-                return new AddToDoCommand(taskInfo);
-
-            case DEADLINE:
-                return new AddDeadlineCommand(taskInfo);
-
-            case EVENT:
-                return new AddEventCommand(taskInfo);
-
-            default:
-                return new InvalidCommand();
+        case BYE:
+            return new ExitCommand();
+        case LIST:
+            return new ListCommand();
+        case MARK:
+            return new MarkCommand(taskInfo);
+        case UNMARK:
+            return new UnmarkCommand(taskInfo);
+        case DELETE:
+            return new DeleteCommand(taskInfo);
+        case TODO:
+            return new AddToDoCommand(taskInfo);
+        case DEADLINE:
+            return new AddDeadlineCommand(taskInfo);
+        case EVENT:
+            return new AddEventCommand(taskInfo);
+        default:
+            return new InvalidCommand();
         }
     }
 

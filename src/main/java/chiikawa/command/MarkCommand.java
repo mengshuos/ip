@@ -31,7 +31,5 @@ public class MarkCommand extends Command {
         } catch (NumberFormatException e) {
             throw new ChiikawaException("giv 1 numba!! 1!! number!!! only!!!!");
         }
-
-
     }
 }

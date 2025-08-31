@@ -1,7 +1,7 @@
 package chiikawa;
 
-import java.util.Objects;
 import java.util.Scanner;
+
 import chiikawa.task.*;
 
 public class Ui {
@@ -18,7 +18,7 @@ public class Ui {
 
     public void showList(TaskList taskList) {
         System.out.println("i- i twhink these you tasks...?");
-        if (!Objects.equals(taskList.toString(), "")) {
+        if (!taskList.toString().isEmpty()) {
             System.out.println(taskList);
         }
     }
