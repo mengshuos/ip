@@ -42,15 +42,20 @@ public class TaskList {
     @Override
     public String toString() {
         String output = "";
+        int counter = 0;
 
         for (int i = 0; i < this.taskList.size(); i++) {
             Task currTask = this.taskList.get(i);
             if (!currTask.isHidden()) {
-                output += (i + 1) + ". " + currTask.toString();
-                output += i == this.taskList.size() - 1 ? "" : "\n";
+                if (counter != 0) {
+                    output += "\n";
+                }
+                output += (counter + 1) + ". " + currTask.toString();
+                counter++;
             }
         }
 
+        counter = 0;
         return output;
     }
 }
