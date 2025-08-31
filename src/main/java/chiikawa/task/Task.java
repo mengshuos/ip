@@ -11,6 +11,7 @@ public class Task {
 
     protected String name;
     protected boolean isCompleted = false;
+    protected boolean isHidden = false;
     private static int TASK_COUNT = 0;
 
     public Task(String name) {
@@ -22,6 +23,10 @@ public class Task {
         this.name = name;
         this.isCompleted = isCompleted;
         TASK_COUNT++;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public String getStatusIcon() {
@@ -42,6 +47,24 @@ public class Task {
 
     public void deleteTask() {
         TASK_COUNT--;
+    }
+
+    /**
+     * Hides the task from the display.
+     */
+    public void hideTask() {
+        this.isHidden = true;
+    }
+
+    /**
+     * Unhides the task from the display.
+     */
+    public void unhideTask() {
+        this.isHidden = false;
+    }
+
+    public boolean isHidden() {
+        return this.isHidden;
     }
 
     protected String reformatTime(String time) {
