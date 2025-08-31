@@ -14,6 +14,7 @@ public class Task {
 
     protected String name;
     protected boolean isCompleted = false;
+    protected boolean isHidden = false;
     private static int TASK_COUNT = 0;
 
     /**
@@ -43,6 +44,10 @@ public class Task {
      *
      * @return 1 if task is complete else 0.
      */
+    public String getName() {
+        return this.name;
+    }
+
     public String getStatusIcon() {
         return (this.isCompleted ? "1" : "0");
     }
@@ -70,6 +75,24 @@ public class Task {
      */
     public void deleteTask() {
         TASK_COUNT--;
+    }
+
+    /**
+     * Hides the task from the display.
+     */
+    public void hideTask() {
+        this.isHidden = true;
+    }
+
+    /**
+     * Unhides the task from the display.
+     */
+    public void unhideTask() {
+        this.isHidden = false;
+    }
+
+    public boolean isHidden() {
+        return this.isHidden;
     }
 
     /**

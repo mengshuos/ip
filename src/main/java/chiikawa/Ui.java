@@ -75,6 +75,15 @@ public class Ui {
     }
 
     /**
+     * Prints Chiikawa's reply to user finding tasks that contains keyword.
+     *
+     * @param keyword
+     */
+    public void showFind(String keyword) {
+        System.out.println("okay.. i keep look out for: " + keyword);
+    }
+
+    /**
      * Prints out what Chiikawa would say when any new Task is added
      * and the actual task itself.
      *
