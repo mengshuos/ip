@@ -11,6 +11,7 @@ public class EventTask extends Task {
 
     /**
      * Constructor for creating new event tasks by user.
+     *
      * @param name Name of the task.
      * @param startTime Starting time of the task.
      * @param endTime Ending time of the task.
@@ -25,6 +26,7 @@ public class EventTask extends Task {
 
     /**
      * Constructor for creating new event tasks as they are loaded from save file.
+     *
      * @param name Name of the task.
      * @param isCompleted Status of the task.
      * @param startTime Starting time of the task.

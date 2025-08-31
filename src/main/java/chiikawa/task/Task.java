@@ -18,6 +18,7 @@ public class Task {
 
     /**
      * Constructor for creating a task, and increasing the TASK_COUNT.
+     *
      * @param name Name of the task.
      */
     public Task(String name) {
@@ -27,6 +28,7 @@ public class Task {
 
     /**
      * Constructor for creating a task that is being loaded from save files.
+     *
      * @param name Name of the task.
      * @param isCompleted Status of the task.
      */
@@ -38,6 +40,7 @@ public class Task {
 
     /**
      * Returns String representation of the completion status of the task.
+     *
      * @return 1 if task is complete else 0.
      */
     public String getStatusIcon() {

@@ -14,6 +14,7 @@ public class DeleteCommand extends Command {
 
     /**
      * Constructor that takes in a String representation of the rest of the user's command.
+     *
      * @param command String representation of the rest of the user's command.
      */
     public DeleteCommand(String command) {

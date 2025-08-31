@@ -6,6 +6,7 @@ package chiikawa.task;
 public class ToDoTask extends Task {
     /**
      * Constructor for creating new to do tasks by user.
+     *
      * @param name Name of the task.
      */
     public ToDoTask(String name) {
@@ -14,6 +15,7 @@ public class ToDoTask extends Task {
 
     /**
      * Constructor for creating new to do tasks as they are loaded from save file.
+     *
      * @param name Name of the task.
      * @param isCompleted Status of the task.
      */

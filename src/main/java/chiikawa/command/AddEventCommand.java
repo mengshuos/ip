@@ -15,6 +15,7 @@ public class AddEventCommand extends Command {
 
     /**
      * Constructor that takes in String representation of the taskInfo and converts it to String array.
+     *
      * @param taskInfo String representation of the rest of the user's input.
      */
     public AddEventCommand(String taskInfo) {

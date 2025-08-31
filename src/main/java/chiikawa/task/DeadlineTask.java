@@ -9,6 +9,7 @@ public class DeadlineTask extends Task {
 
     /**
      * Constructor for creating new deadline tasks by user.
+     *
      * @param name Name of the task.
      * @param deadline Due date of the task.
      */
@@ -20,6 +21,7 @@ public class DeadlineTask extends Task {
 
     /**
      * Constructor for creating new deadline tasks as they are loaded from save file.
+     *
      * @param name Name of the task.
      * @param isCompleted Status of the task.
      * @param deadline Due date of the task.

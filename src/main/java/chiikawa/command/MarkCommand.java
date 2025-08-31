@@ -14,6 +14,7 @@ public class MarkCommand extends Command {
 
     /**
      * Constructor that takes in a String representation of the rest of the user's command.
+     *
      * @param command String representation of the rest of the user's command.
      */
     public MarkCommand(String command) {
@@ -38,7 +39,5 @@ public class MarkCommand extends Command {
         } catch (NumberFormatException e) {
             throw new ChiikawaException("giv 1 numba!! 1!! number!!! only!!!!");
         }
-
-
     }
 }

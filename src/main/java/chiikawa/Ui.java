@@ -12,6 +12,7 @@ public class Ui {
 
     /**
      * Returns the next line of input.
+     *
      * @return next line of input by user.
      */
     public String readCommand() {
@@ -29,6 +30,7 @@ public class Ui {
     /**
      * Prints out what Chiikawa would say when showing users the list
      * and the actual list.
+     *
      * @param taskList the taskList that the user is operating with.
      */
     public void showList(TaskList taskList) {
@@ -41,6 +43,7 @@ public class Ui {
     /**
      * Prints out what Chiikawa would say when a task is marked as complete,
      * and the actual task itself.
+     *
      * @param markedTask Task that has just been marked complete.
      */
     public void showMark(Task markedTask) {
@@ -51,6 +54,7 @@ public class Ui {
     /**
      * Prints out what Chiikawa would say when a task is marked as incomplete,
      * and the actual task itself.
+     *
      * @param unmarkedTask Task that has just been marked incomplete.
      */
     public void showUnmark(Task unmarkedTask) {
@@ -61,6 +65,7 @@ public class Ui {
     /**
      * Prints out what Chiikawa would say when a task is deleted
      * and the actual task itself.
+     *
      * @param deletedTask Task that has just been deleted.
      */
     public void showDelete(Task deletedTask) {
@@ -72,6 +77,7 @@ public class Ui {
     /**
      * Prints out what Chiikawa would say when any new Task is added
      * and the actual task itself.
+     *
      * @param newTask new Task that is created.
      */
     public void showAddTask(Task newTask) {
@@ -97,6 +103,7 @@ public class Ui {
     /**
      * Prints out what Chiikawa would say when there is an error
      * and the error that is being thrown.
+     *
      * @param errorMessage String representation of the error.
      */
     public void showError(String errorMessage) {

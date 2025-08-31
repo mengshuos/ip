@@ -12,6 +12,7 @@ public class TaskList {
     /**
      * Constructor for TaskList, assigns existing taskList to
      * its own field taskList.
+     *
      * @param taskList ArrayList of Tasks that was obtained from a save file.
      */
     public TaskList(ArrayList<Task> taskList) {
@@ -32,6 +33,7 @@ public class TaskList {
 
     /**
      * Marks the specified task and returns it.
+     *
      * @param index The index the task is at in the ArrayList + 1.
      * @return The task that was marked.
      */
@@ -42,6 +44,7 @@ public class TaskList {
 
     /**
      * Unmarks the specified task and returns it.
+     *
      * @param index The index the task is at in the ArrayList + 1.
      * @return The task that was unmarked.
      */
@@ -52,6 +55,7 @@ public class TaskList {
 
     /**
      * Adds newTask to the end of taskList.
+     *
      * @param newTask new Task to be added.
      */
     public void addTask(Task newTask) {
@@ -60,6 +64,7 @@ public class TaskList {
 
     /**
      * Deletes the specified task and returns it.
+     *
      * @param index The index the task is at in the ArrayList + 1.
      * @return The task that was deleted.
      */

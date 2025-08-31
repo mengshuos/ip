@@ -14,6 +14,7 @@ public class Chiikawa {
 
     /**
      * Constructor for a new Chiikawa instance.
+     *
      * @param filePath path to the storage file which contains all the saved tasks
      */
     public Chiikawa(String filePath) {
@@ -52,6 +53,7 @@ public class Chiikawa {
 
     /**
      * The main entry point of the program.
+     *
      * @param args
      */
     public static void main(String[] args) {

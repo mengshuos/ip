@@ -13,6 +13,7 @@ public abstract class Command {
 
     /**
      * Executes the corresponding commands.
+     *
      * @param tasks TaskList that holds all the current tasks.
      * @param ui Ui that is in charge of all the outputs to the screen.
      * @param storage Storage that is in charge of saving and loading save files.
@@ -20,11 +21,6 @@ public abstract class Command {
      */
     public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException;
 
-    /**
-     * Getter for isExit, representing if the program should terminate.
-     *
-     * @return boolean representing if the program should terminate.
-     */
     public boolean isExit() {
         return this.isExit;
     }
