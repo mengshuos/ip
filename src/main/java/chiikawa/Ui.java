@@ -39,6 +39,15 @@ public class Ui {
         System.out.println("now only have " + Task.getTaskCount() + " tasks...");
     }
 
+    /**
+     * Prints Chiikawa's reply to user finding tasks that contains keyword.
+     *
+     * @param keyword
+     */
+    public void showFind(String keyword) {
+        System.out.println("okay.. i keep look out for: " + keyword);
+    }
+
     public void showAddTask(Task newTask) {
         if (newTask instanceof ToDoTask) {
             System.out.println("wahhh! oke, me add add:");

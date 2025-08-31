@@ -9,7 +9,7 @@ import chiikawa.command.*;
  */
 public class Parser {
     enum Commands {
-        TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE
+        TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE, FIND
     }
 
     public static Command parse(String fullCommand) {
@@ -31,6 +31,9 @@ public class Parser {
         switch (command) {
             case BYE:
                 return new ExitCommand();
+
+            case FIND:
+                return new FindCommand(taskInfo);
 
             case LIST:
                 return new ListCommand();

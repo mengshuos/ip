@@ -45,8 +45,10 @@ public class TaskList {
 
         for (int i = 0; i < this.taskList.size(); i++) {
             Task currTask = this.taskList.get(i);
-            output += (i + 1) + ". " + currTask.toString();
-            output += i == this.taskList.size() - 1 ? "" : "\n";
+            if (!currTask.isHidden()) {
+                output += (i + 1) + ". " + currTask.toString();
+                output += i == this.taskList.size() - 1 ? "" : "\n";
+            }
         }
 
         return output;
