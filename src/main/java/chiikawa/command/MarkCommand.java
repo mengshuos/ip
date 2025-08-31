@@ -6,9 +6,17 @@ import chiikawa.Storage;
 import chiikawa.ChiikawaException;
 import chiikawa.task.Task;
 
+/**
+ * Class for marking a task as complete.
+ */
 public class MarkCommand extends Command {
     private String indexStr;
 
+    /**
+     * Constructor that takes in a String representation of the rest of the user's command.
+     *
+     * @param command String representation of the rest of the user's command.
+     */
     public MarkCommand(String command) {
         this.indexStr = command;
     }
@@ -31,7 +39,5 @@ public class MarkCommand extends Command {
         } catch (NumberFormatException e) {
             throw new ChiikawaException("giv 1 numba!! 1!! number!!! only!!!!");
         }
-
-
     }
 }

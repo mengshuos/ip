@@ -6,10 +6,17 @@ import chiikawa.Storage;
 import chiikawa.ChiikawaException;
 import chiikawa.task.ToDoTask;
 
-
+/**
+ * Class for adding a new to do task.
+ */
 public class AddToDoCommand extends Command {
     private String taskInfo;
 
+    /**
+     * Constructor that takes in String representation of the taskInfo and converts it to String array.
+     *
+     * @param taskInfo String representation of the rest of the user's input.
+     */
     public AddToDoCommand(String taskInfo) {
         this.taskInfo = taskInfo.strip();
     }

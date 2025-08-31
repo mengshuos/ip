@@ -7,9 +7,17 @@ import chiikawa.Storage;
 import chiikawa.ChiikawaException;
 import chiikawa.task.EventTask;
 
+/**
+ * Class for adding a new event task.
+ */
 public class AddEventCommand extends Command {
     private String[] taskInfoArray;
 
+    /**
+     * Constructor that takes in String representation of the taskInfo and converts it to String array.
+     *
+     * @param taskInfo String representation of the rest of the user's input.
+     */
     public AddEventCommand(String taskInfo) {
         this.taskInfoArray = Parser.parseTaskInfo(taskInfo, "/", 3);
     }
