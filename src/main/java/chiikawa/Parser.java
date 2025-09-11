@@ -1,6 +1,16 @@
 package chiikawa;
 
-import chiikawa.command.*;
+import chiikawa.command.AddDeadlineCommand;
+import chiikawa.command.AddEventCommand;
+import chiikawa.command.AddToDoCommand;
+import chiikawa.command.Command;
+import chiikawa.command.DeleteCommand;
+import chiikawa.command.ExitCommand;
+import chiikawa.command.FindCommand;
+import chiikawa.command.InvalidCommand;
+import chiikawa.command.ListCommand;
+import chiikawa.command.MarkCommand;
+import chiikawa.command.UnmarkCommand;
 
 /**
  * Parser makes sense of the user's commands. It will only interpret what the user wants to do and

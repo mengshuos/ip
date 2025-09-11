@@ -6,7 +6,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import chiikawa.task.*;
+import chiikawa.task.DeadlineTask;
+import chiikawa.task.EventTask;
+import chiikawa.task.Task;
+import chiikawa.task.ToDoTask;
 
 /**
  * Class representing the storage system of Chiikawa,
@@ -58,7 +61,7 @@ public class Storage {
             throw new ChiikawaException("scanner pwoblem....");
         }
 
-        while(s.hasNextLine()) {
+        while (s.hasNextLine()) {
             String[] line = Parser.parseTaskInfo(s.nextLine(), "\\|", 4);
             boolean isCompleted = line[1].equals("1");
             String command = line[0];
@@ -83,6 +86,9 @@ public class Storage {
                         eventTime[0],
                         eventTime[1]);
                 taskList.add(newEventTask);
+                break;
+
+            default:
                 break;
             }
         }

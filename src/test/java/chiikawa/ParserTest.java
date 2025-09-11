@@ -1,10 +1,20 @@
 package chiikawa;
 
-import chiikawa.command.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import chiikawa.command.AddDeadlineCommand;
+import chiikawa.command.AddEventCommand;
+import chiikawa.command.AddToDoCommand;
+import chiikawa.command.Command;
+import chiikawa.command.DeleteCommand;
+import chiikawa.command.ExitCommand;
+import chiikawa.command.InvalidCommand;
+import chiikawa.command.ListCommand;
+import chiikawa.command.MarkCommand;
+import chiikawa.command.UnmarkCommand;
 
 public class ParserTest {
     @Test

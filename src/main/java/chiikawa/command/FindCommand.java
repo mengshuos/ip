@@ -1,16 +1,24 @@
 package chiikawa.command;
 
-import chiikawa.Ui;
-import chiikawa.TaskList;
-import chiikawa.Storage;
-import chiikawa.ChiikawaException;
-import chiikawa.task.Task;
-
 import java.util.ArrayList;
 
+import chiikawa.ChiikawaException;
+import chiikawa.Storage;
+import chiikawa.TaskList;
+import chiikawa.Ui;
+import chiikawa.task.Task;
+
+/**
+ * Class for filtering tasks with a certain keyword.
+ */
 public class FindCommand extends Command {
     private String keyword;
 
+    /**
+     * Constructor that takes in a string representation of a keyword and stores it.
+     *
+     * @param keyword
+     */
     public FindCommand(String keyword) {
         this.keyword = keyword;
     }
