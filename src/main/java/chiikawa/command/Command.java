@@ -17,9 +17,10 @@ public abstract class Command {
      * @param tasks TaskList that holds all the current tasks.
      * @param ui Ui that is in charge of all the outputs to the screen.
      * @param storage Storage that is in charge of saving and loading save files.
+     * @return String representation of what CHiikawa will say.
      * @throws ChiikawaException Exceptions unique to Chiikawa.
      */
-    public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException;
+    public abstract String execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException;
 
     public boolean isExit() {
         return this.isExit;

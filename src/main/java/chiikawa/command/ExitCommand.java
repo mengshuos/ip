@@ -17,8 +17,8 @@ public class ExitCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
-        ui.showBye();
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
         storage.saveFile(tasks.getTaskList());
+        return ui.showBye();
     }
 }

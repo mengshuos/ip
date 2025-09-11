@@ -7,6 +7,7 @@ import chiikawa.command.Command;
  * where the main program loop is ran.
  */
 public class Chiikawa {
+    private boolean isFirstMessage = true;
     private Storage storage;
     private TaskList tasks;
     private Ui ui;
@@ -25,6 +26,28 @@ public class Chiikawa {
             ui.showLoadingError();
             tasks = new TaskList();
         }
+    }
+
+    /**
+     * Generates a response for the user's chat message.
+     */
+    public String getResponse(String input) {
+        String output = "";
+
+        if (isFirstMessage) {
+            isFirstMessage = false;
+            return ui.showWelcome();
+        }
+
+        try {
+            String fullCommand = input;
+            Command c = Parser.parse(fullCommand);
+            output = c.execute(tasks, ui, storage);
+        } catch (ChiikawaException e) {
+            output = ui.showError(e.getMessage());
+        }
+
+        return output;
     }
 
     /**
@@ -48,14 +71,5 @@ public class Chiikawa {
                 ui.showLine();
             }
         }
-    }
-
-    /**
-     * The main entry point of the program.
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        new Chiikawa("data/list.txt").run();
     }
 }
