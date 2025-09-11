@@ -22,7 +22,7 @@ public class MarkCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
         if (this.indexStr.isEmpty()) {
             throw new ChiikawaException("you give me nothin!! delete wat?!");
         }
@@ -35,7 +35,7 @@ public class MarkCommand extends Command {
             }
 
             Task markedTask = tasks.markTask(index);
-            ui.showMark(markedTask);
+            return ui.showMark(markedTask);
         } catch (NumberFormatException e) {
             throw new ChiikawaException("giv 1 numba!! 1!! number!!! only!!!!");
         }

@@ -22,7 +22,7 @@ public class UnmarkCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
         if (this.indexStr.isEmpty()) {
             throw new ChiikawaException("you give me nothin!! delete wat?!");
         }
@@ -35,7 +35,7 @@ public class UnmarkCommand extends Command {
             }
 
             Task unmarkedTask = tasks.unmarkTask(index);
-            ui.showUnmark(unmarkedTask);
+            return ui.showUnmark(unmarkedTask);
         } catch (NumberFormatException e) {
             throw new ChiikawaException("giv 1 numba!! 1!! number!!! only!!!!");
         }

@@ -23,7 +23,7 @@ public class AddEventCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
         if (taskInfoArray.length != 3) {
             throw new ChiikawaException("you no give enuff info!! more more!!!!");
         }
@@ -39,6 +39,6 @@ public class AddEventCommand extends Command {
                 this.taskInfoArray[1],
                 this.taskInfoArray[2]);
         tasks.addTask(newEventTask);
-        ui.showAddTask(newEventTask);
+        return ui.showAddTask(newEventTask);
     }
 }

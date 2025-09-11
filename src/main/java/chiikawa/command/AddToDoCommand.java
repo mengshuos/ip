@@ -22,13 +22,13 @@ public class AddToDoCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
         if (taskInfo.isEmpty()) {
             throw new ChiikawaException("no name! where name!!");
         }
 
         ToDoTask newToDoTask = new ToDoTask(this.taskInfo);
         tasks.addTask(newToDoTask);
-        ui.showAddTask(newToDoTask);
+        return ui.showAddTask(newToDoTask);
     }
 }

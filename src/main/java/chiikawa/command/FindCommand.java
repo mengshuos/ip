@@ -24,7 +24,9 @@ public class FindCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
+        String output = "";
+
         if (this.keyword.isEmpty()) {
             throw new ChiikawaException("find wat? hah?");
         }
@@ -38,11 +40,12 @@ public class FindCommand extends Command {
             }
         }
 
-        ui.showFind(this.keyword);
-        ui.showList(tasks);
+        output += ui.showFind(this.keyword) + "\n" + ui.showList(tasks);
 
         for (int i = 0; i < tasks.getTaskList().size(); i++) {
             taskList.get(i).unhideTask();
         }
+
+        return output;
     }
 }

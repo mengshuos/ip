@@ -23,7 +23,7 @@ public class AddDeadlineCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException {
         if (taskInfoArray.length != 2) {
             throw new ChiikawaException("you no give enuff info!! more more!!!!");
         }
@@ -36,6 +36,6 @@ public class AddDeadlineCommand extends Command {
 
         DeadlineTask newDeadlineTask = new DeadlineTask(this.taskInfoArray[0], this.taskInfoArray[1]);
         tasks.addTask(newDeadlineTask);
-        ui.showAddTask(newDeadlineTask);
+        return ui.showAddTask(newDeadlineTask);
     }
 }
