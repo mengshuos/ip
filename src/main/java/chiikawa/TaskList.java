@@ -2,7 +2,7 @@ package chiikawa;
 
 import java.util.ArrayList;
 
-import chiikawa.task.*;
+import chiikawa.task.Task;
 
 /**
  * Class representing the ArrayList of Tasks with many methods.

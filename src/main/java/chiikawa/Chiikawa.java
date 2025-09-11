@@ -1,7 +1,6 @@
 package chiikawa;
 
-import chiikawa.command.*;
-
+import chiikawa.command.Command;
 /**
  * The Chiikawa class represents the main entry point of the program.
  * It takes care of initialising all other related classes and acts as the entry point

@@ -1,9 +1,9 @@
 package chiikawa.command;
 
-import chiikawa.Ui;
-import chiikawa.TaskList;
-import chiikawa.Storage;
 import chiikawa.ChiikawaException;
+import chiikawa.Storage;
+import chiikawa.TaskList;
+import chiikawa.Ui;
 
 /**
  * Class for the exiting the program.

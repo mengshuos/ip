@@ -9,14 +9,14 @@ import java.util.regex.Pattern;
  * Class that represents tasks in general.
  */
 public class Task {
-    private final Pattern PATTERN = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
-    private Matcher matcher;
+    private static final Pattern PATTERN = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
+    private static int taskCount = 0;
 
-    protected String name;
     protected boolean isCompleted = false;
     protected boolean isHidden = false;
-    private static int TASK_COUNT = 0;
+    protected String name;
 
+    private Matcher matcher;
     /**
      * Constructor for creating a task, and increasing the TASK_COUNT.
      *
@@ -24,7 +24,7 @@ public class Task {
      */
     public Task(String name) {
         this.name = name;
-        TASK_COUNT++;
+        taskCount++;
     }
 
     /**
@@ -36,7 +36,7 @@ public class Task {
     public Task(String name, boolean isCompleted) {
         this.name = name;
         this.isCompleted = isCompleted;
-        TASK_COUNT++;
+        taskCount++;
     }
 
     /**
@@ -67,14 +67,14 @@ public class Task {
     }
 
     public static int getTaskCount() {
-        return TASK_COUNT;
+        return taskCount;
     }
 
     /**
      * Decrements the number of tasks that has not been deleted.
      */
     public void deleteTask() {
-        TASK_COUNT--;
+        taskCount--;
     }
 
     /**
