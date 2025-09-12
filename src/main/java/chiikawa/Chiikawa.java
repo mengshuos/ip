@@ -49,27 +49,4 @@ public class Chiikawa {
 
         return output;
     }
-
-    /**
-     * Starts the program by showing the welcome message before waiting for users' input.
-     * Upon receiving users' inputs, their input will be parsed and a new command will be returned,
-     * which will then be executed.
-     */
-    public void run() {
-        ui.showWelcome();
-        boolean isExit = false;
-        while (!isExit) {
-            try {
-                String fullCommand = ui.readCommand();
-                ui.showLine();
-                Command c = Parser.parse(fullCommand);
-                c.execute(tasks, ui, storage);
-                isExit = c.isExit();
-            } catch (ChiikawaException e) {
-                ui.showError(e.getMessage());
-            } finally {
-                ui.showLine();
-            }
-        }
-    }
 }
