@@ -87,12 +87,11 @@ public class TaskList {
                 if (counter != 0) {
                     output += "\n";
                 }
-                output += (counter + 1) + ". " + currTask.toString();
+                output += (counter + 1) + ". " + currTask;
                 counter++;
             }
         }
 
-        counter = 0;
         return output;
     }
 }

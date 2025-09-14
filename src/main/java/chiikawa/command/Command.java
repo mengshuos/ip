@@ -21,8 +21,4 @@ public abstract class Command {
      * @throws ChiikawaException Exceptions unique to Chiikawa.
      */
     public abstract String execute(TaskList tasks, Ui ui, Storage storage) throws ChiikawaException;
-
-    public boolean isExit() {
-        return this.isExit;
-    }
 }
