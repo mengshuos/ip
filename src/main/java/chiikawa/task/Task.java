@@ -71,6 +71,14 @@ public class Task {
         this.isCompleted = false;
     }
 
+    /**
+     * Changes the priority of the task depending on user input.
+     * @param newPriority either HIGH or LOW.
+     */
+    public void updatePriority(Priority newPriority) {
+        this.priority = newPriority;
+    }
+
     public static int getTaskCount() {
         return taskCount;
     }
