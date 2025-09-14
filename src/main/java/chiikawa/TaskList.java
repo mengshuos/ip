@@ -83,10 +83,11 @@ public class TaskList {
 
         for (int i = 0; i < this.taskList.size(); i++) {
             Task currTask = this.taskList.get(i);
+            if (!currTask.isHidden() && counter != 0) {
+                output += "\n";
+            }
+
             if (!currTask.isHidden()) {
-                if (counter != 0) {
-                    output += "\n";
-                }
                 output += (counter + 1) + ". " + currTask;
                 counter++;
             }
