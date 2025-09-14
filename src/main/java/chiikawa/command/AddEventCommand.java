@@ -29,7 +29,7 @@ public class AddEventCommand extends Command {
         }
 
         for (String s: taskInfoArray) {
-            if (s.isEmpty()) {
+            if (s.trim().isEmpty()) { // Copilot suggested to trim first to rid of "  " cases!
                 throw new ChiikawaException("blank!! u gave me blanks!!");
             }
         }

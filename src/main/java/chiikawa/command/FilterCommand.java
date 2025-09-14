@@ -21,7 +21,7 @@ public class FilterCommand extends Command {
      * @param priority
      */
     public FilterCommand(String priority) {
-        this.priorityStr = priority;
+        this.priorityStr = priority.trim(); // Copilot suggested!
     }
 
     @Override
@@ -37,7 +37,7 @@ public class FilterCommand extends Command {
             String priorityStr = this.priorityStr.strip().toUpperCase();
             Priority priority = Priority.valueOf(priorityStr);
 
-            for (int i = 0; i < tasks.getTaskList().size(); i++) {
+            for (int i = 0; i < taskList.size(); i++) { // Copilot spotted my mistake of not using taskList.
                 if (taskList.get(i).getPriority() != priority) {
                     taskList.get(i).hideTask();
                 }
@@ -48,7 +48,7 @@ public class FilterCommand extends Command {
             throw new ChiikawaException("can only feelter by HIGH or LOW!! HIGH!! LOW!!");
         }
 
-        for (int i = 0; i < tasks.getTaskList().size(); i++) {
+        for (int i = 0; i < taskList.size(); i++) {
             taskList.get(i).unhideTask();
         }
 

@@ -44,15 +44,15 @@ public class Task {
         taskCount++;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     /**
      * Returns String representation of the completion status of the task.
      *
      * @return 1 if task is complete else 0.
      */
-    public String getName() {
-        return this.name;
-    }
-
     public String getStatusIcon() {
         return (this.isCompleted ? "1" : "0");
     }

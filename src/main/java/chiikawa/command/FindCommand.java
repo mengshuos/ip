@@ -34,7 +34,7 @@ public class FindCommand extends Command {
         this.keyword = this.keyword.strip();
         ArrayList<Task> taskList = tasks.getTaskList();
 
-        for (int i = 0; i < tasks.getTaskList().size(); i++) {
+        for (int i = 0; i < taskList.size(); i++) {
             if (!taskList.get(i).getName().contains(this.keyword)) {
                 taskList.get(i).hideTask();
             }
@@ -42,7 +42,7 @@ public class FindCommand extends Command {
 
         output += ui.showFind(this.keyword) + "\n" + ui.showList(tasks);
 
-        for (int i = 0; i < tasks.getTaskList().size(); i++) {
+        for (int i = 0; i < taskList.size(); i++) {
             taskList.get(i).unhideTask();
         }
 
