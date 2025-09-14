@@ -65,6 +65,8 @@ public class Storage {
             String[] line = Parser.parseTaskInfo(s.nextLine(), "\\|", 4);
             boolean isCompleted = line[1].equals("1");
             String command = line[0];
+
+            assert command != null : "command must be non-null!";
             switch (command) {
             case "T":
                 ToDoTask newToDoTask = new ToDoTask(line[2], isCompleted);
@@ -72,7 +74,8 @@ public class Storage {
                 break;
 
             case "D":
-                DeadlineTask newDeadlineTask = new DeadlineTask(line[2],
+                DeadlineTask newDeadlineTask = new DeadlineTask(
+                        line[2],
                         isCompleted,
                         line[3]);
                 taskList.add(newDeadlineTask);
