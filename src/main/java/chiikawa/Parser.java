@@ -47,6 +47,8 @@ public class Parser {
             taskInfo = fullCommandArray[1];
         }
 
+        // Assert that command cannot be null before running the switch statements.
+        assert command != null : "Command must not be null! Something went wrong!";
         switch (command) {
         case BYE:
             return new ExitCommand();
