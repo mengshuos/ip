@@ -81,7 +81,10 @@ public class TaskList {
         String output = "";
         int counter = 0;
 
+        int originalTaskListSize = this.taskList.size();
         for (int i = 0; i < this.taskList.size(); i++) {
+            assert this.taskList.size() == originalTaskListSize : "Size of taskList changed!";
+
             Task currTask = this.taskList.get(i);
             if (!currTask.isHidden()) {
                 if (counter != 0) {
@@ -92,7 +95,6 @@ public class TaskList {
             }
         }
 
-        counter = 0;
         return output;
     }
 }
