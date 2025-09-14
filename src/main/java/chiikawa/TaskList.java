@@ -3,6 +3,7 @@ package chiikawa;
 import java.util.ArrayList;
 
 import chiikawa.task.Task;
+import chiikawa.task.Task.Priority;
 
 /**
  * Class representing the ArrayList of Tasks with many methods.
@@ -51,6 +52,18 @@ public class TaskList {
      */
     public Task unmarkTask(int index) {
         this.taskList.get(index - 1).unmarkTask();
+        return this.taskList.get(index - 1);
+    }
+
+    /**
+     * Updates the priority of the specified task and returns it.
+     *
+     * @param index The index the task is at in the ArrayList + 1.
+     * @param priority HIGH or LOW depending on user input.
+     * @return The task that had its priority updated.
+     */
+    public Task updatePriorityTask(int index, Priority priority) {
+        this.taskList.get(index - 1).updatePriority(priority);
         return this.taskList.get(index - 1);
     }
 

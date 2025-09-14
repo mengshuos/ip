@@ -6,11 +6,13 @@ import chiikawa.command.AddToDoCommand;
 import chiikawa.command.Command;
 import chiikawa.command.DeleteCommand;
 import chiikawa.command.ExitCommand;
+import chiikawa.command.FilterCommand;
 import chiikawa.command.FindCommand;
 import chiikawa.command.InvalidCommand;
 import chiikawa.command.ListCommand;
 import chiikawa.command.MarkCommand;
 import chiikawa.command.UnmarkCommand;
+import chiikawa.command.UpdatePriorityCommand;
 
 /**
  * Parser makes sense of the user's commands. It will only interpret what the user wants to do and
@@ -19,7 +21,7 @@ import chiikawa.command.UnmarkCommand;
  */
 public class Parser {
     enum Commands {
-        TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE, FIND
+        TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE, FIND, PRIORITY, FILTER
     }
 
     /**
@@ -62,6 +64,10 @@ public class Parser {
             return new UnmarkCommand(taskInfo);
         case DELETE:
             return new DeleteCommand(taskInfo);
+        case PRIORITY:
+            return new UpdatePriorityCommand(taskInfo);
+        case FILTER:
+            return new FilterCommand(taskInfo);
         case TODO:
             return new AddToDoCommand(taskInfo);
         case DEADLINE:
