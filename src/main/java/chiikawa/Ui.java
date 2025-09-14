@@ -107,6 +107,19 @@ public class Ui {
     }
 
     /**
+     * Prints out what Chiikawa would say when a task has its priority updated.
+     * @param updatedTask Task that has just had its priority updated.
+     * @return String representation of what Chiikawa will say.
+     */
+    public String showUpdatePriority(Task updatedTask) {
+        String output = "oke! pwiowity changedd!! now it iz:\n";
+        output += updatedTask.toString();
+        System.out.println(output);
+
+        return output;
+    }
+
+    /**
      * Prints Chiikawa's reply to user finding tasks that contains keyword.
      *
      * @param keyword the word that we will try to match to tasks.
