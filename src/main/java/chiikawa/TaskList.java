@@ -86,11 +86,12 @@ public class TaskList {
             assert this.taskList.size() == originalTaskListSize : "Size of taskList changed!";
 
             Task currTask = this.taskList.get(i);
+            if (!currTask.isHidden() && counter != 0) {
+                output += "\n";
+            }
+
             if (!currTask.isHidden()) {
-                if (counter != 0) {
-                    output += "\n";
-                }
-                output += (counter + 1) + ". " + currTask.toString();
+                output += (counter + 1) + ". " + currTask;
                 counter++;
             }
         }
