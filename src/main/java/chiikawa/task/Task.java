@@ -12,11 +12,16 @@ public class Task {
     private static final Pattern PATTERN = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
     private static int taskCount = 0;
 
+    public enum Priority {HIGH, LOW};
+
     protected boolean isCompleted = false;
     protected boolean isHidden = false;
     protected String name;
 
     private Matcher matcher;
+    private Priority priority = Priority.LOW;
+
+
     /**
      * Constructor for creating a task, and increasing the TASK_COUNT.
      *
@@ -117,6 +122,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "| " + this.getStatusIcon() + " | " + this.name;
+        return "| " + this.getStatusIcon() + " | " + this.priority + " | " + this.name;
     }
 }
