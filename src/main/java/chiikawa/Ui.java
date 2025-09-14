@@ -133,6 +133,19 @@ public class Ui {
     }
 
     /**
+     * Prints Chiikawa's reply to user finding tasks that contains keyword.
+     *
+     * @param keyword the word that we will try to match to tasks.
+     * @return string representation of what Chiikawa will say.
+     */
+    public String showFilter(String keyword) {
+        String output = "okay.. i help u fewter: " + keyword;
+        System.out.println(output);
+
+        return output;
+    }
+
+    /**
      * Prints out what Chiikawa would say when any new Task is added
      * and the actual task itself.
      *

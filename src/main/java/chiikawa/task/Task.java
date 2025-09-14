@@ -79,6 +79,10 @@ public class Task {
         this.priority = newPriority;
     }
 
+    public Priority getPriority() {
+        return this.priority;
+    }
+
     public static int getTaskCount() {
         return taskCount;
     }

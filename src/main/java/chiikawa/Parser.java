@@ -6,6 +6,7 @@ import chiikawa.command.AddToDoCommand;
 import chiikawa.command.Command;
 import chiikawa.command.DeleteCommand;
 import chiikawa.command.ExitCommand;
+import chiikawa.command.FilterCommand;
 import chiikawa.command.FindCommand;
 import chiikawa.command.InvalidCommand;
 import chiikawa.command.ListCommand;
@@ -20,7 +21,7 @@ import chiikawa.command.UpdatePriorityCommand;
  */
 public class Parser {
     enum Commands {
-        TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE, FIND, PRIORITY
+        TODO, DEADLINE, EVENT, LIST, MARK, UNMARK, DELETE, BYE, FIND, PRIORITY, FILTER
     }
 
     /**
@@ -65,6 +66,8 @@ public class Parser {
             return new DeleteCommand(taskInfo);
         case PRIORITY:
             return new UpdatePriorityCommand(taskInfo);
+        case FILTER:
+            return new FilterCommand(taskInfo);
         case TODO:
             return new AddToDoCommand(taskInfo);
         case DEADLINE:
