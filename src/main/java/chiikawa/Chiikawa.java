@@ -1,6 +1,11 @@
 package chiikawa;
 
+import javafx.animation.PauseTransition;
+import javafx.application.Platform;
+import javafx.util.Duration;
+
 import chiikawa.command.Command;
+
 /**
  * The Chiikawa class represents the main entry point of the program.
  * It takes care of initialising all other related classes and acts as the entry point
@@ -43,6 +48,14 @@ public class Chiikawa {
             String fullCommand = input;
             Command c = Parser.parse(fullCommand);
             output = c.execute(tasks, ui, storage);
+
+            if (c.isExit()) {
+                PauseTransition delay = new PauseTransition(Duration.seconds(1));
+                delay.setOnFinished(event -> {
+                    Platform.exit(); // Closes the JavaFX application
+                });
+                delay.play();
+            }
         } catch (ChiikawaException e) {
             output = ui.showError(e.getMessage());
         }
